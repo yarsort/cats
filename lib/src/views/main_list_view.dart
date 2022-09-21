@@ -162,8 +162,8 @@ class _SampleItemListViewState extends State<SampleItemListView> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'Цікавий факт про котів',
-                          style: TextStyle(fontSize: 14, color: Colors.grey),
+                          'Цікавий факт про котиків',
+                          style: TextStyle(color: Colors.teal, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.justify,
                         ),
                       ],
