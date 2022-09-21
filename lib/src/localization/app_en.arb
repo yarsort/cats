@@ -1,0 +1,6 @@
+{
+  "appTitle": "Cats",
+  "@appTitle": {
+    "description": "All facts about our cats"
+  }
+}
