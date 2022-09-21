@@ -1,12 +1,16 @@
-# cats
+# cats КотоФакти :)
 
-A new Flutter project.
+Мобільний додаток із цікавими фактами про котиків. :)
+
+![Screenshot_2022-09-21-17-13-00-57](https://user-images.githubusercontent.com/54131603/191528581-3d251e44-bda1-4a79-8436-0fd3f0457d1d.jpg)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+При відкритті ви отримуєте факт перекладений на українську мову із порталу https://catfact.ninja
+
+Отримавши факт та довільну картинку, Ви можете зберігти історичний факт у замітки.
+
+![Screenshot_2022-09-21-17-13-17-83](https://user-images.githubusercontent.com/54131603/191528750-69dee12a-f9bb-4666-9500-9430675be310.jpg)
 
 For help getting started with Flutter development, view the
 [online documentation](https://flutter.dev/docs), which offers tutorials,
