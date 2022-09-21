@@ -41,18 +41,20 @@ class _SampleItemListViewState extends State<SampleItemListView> {
           ),
         ],
       ),
-      body: Center(
-        child: BlocBuilder<FactBloc, FactState>(
-          builder: (context, state) {
-            if (state is FactInitial) {
-              return bodyProgress();
-            }
-            if (state is FactLoaded) {
-              return infoFact(state.fact);
-            } else {
-              return const Text('Ой лишенько, трапилась якась помилка!');
-            }
-          },
+      body: SafeArea(
+        child: Center(
+          child: BlocBuilder<FactBloc, FactState>(
+            builder: (context, state) {
+              if (state is FactInitial) {
+                return bodyProgress();
+              }
+              if (state is FactLoaded) {
+                return infoFact(state.fact);
+              } else {
+                return const Text('Ой лишенько, трапилась якась помилка!');
+              }
+            },
+          ),
         ),
       ),
     );
@@ -109,13 +111,15 @@ class _SampleItemListViewState extends State<SampleItemListView> {
   Widget infoFact(Fact fact) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: ListView(
-        physics: const BouncingScrollPhysics(),
-        children: [
-          photoCat(fact),
-          descriptionCat(fact),
-          operationCat(fact),
-        ],
+      child: SizedBox(
+        //height: MediaQuery.of(context).size.height-10,
+        child: Column(
+          children: [
+            photoCat(fact),
+            descriptionCat(fact),
+            operationCat(fact),
+          ],
+        ),
       ),
     );
   }
@@ -132,6 +136,7 @@ class _SampleItemListViewState extends State<SampleItemListView> {
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
                 height: 250,
+                width: double.infinity,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(5)),
                   child: Image.file(File(fact.imagePath),
@@ -142,36 +147,35 @@ class _SampleItemListViewState extends State<SampleItemListView> {
   }
 
   Widget descriptionCat(fact) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            border: Border.all(width: 1, color: Colors.black12)),
-        child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: SizedBox(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height - 519,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'Цікавий факт про котиків',
-                          style: TextStyle(color: Colors.teal, fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ],
-                    ),
-                    const Divider(),
-                    Text(fact.text,textAlign: TextAlign.justify,),
-                  ],
-                ))),
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+        child: Container(
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              border: Border.all(width: 1, color: Colors.black12)),
+          child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        'Цікавий факт про котиків',
+                        style: TextStyle(color: Colors.teal, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ],
+                  ),
+                  const Divider(),
+                  Text(fact.text,textAlign: TextAlign.justify,),
+                ],
+              )),
+        ),
       ),
     );
   }

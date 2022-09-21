@@ -51,7 +51,10 @@ class Fact extends HiveObject {
 
       List<FileSystemEntity> files = appDir.listSync();
       for (var file in files){
-        file.deleteSync();
+        final extension = path.extension(file.path);
+        if (extension == 'jpg'){
+          file.deleteSync();
+        }
       }
 
       // Incrementing
