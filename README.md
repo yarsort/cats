@@ -1,8 +1,8 @@
-# cats
-
-![Screenshot_2022-09-21-17-13-00-57](https://user-images.githubusercontent.com/54131603/191528581-3d251e44-bda1-4a79-8436-0fd3f0457d1d.jpg)
+# cats КотоФакти :)
 
 Мобільний додаток із цікавими фактами про котиків. :)
+
+![Screenshot_2022-09-21-17-13-00-57](https://user-images.githubusercontent.com/54131603/191528581-3d251e44-bda1-4a79-8436-0fd3f0457d1d.jpg)
 
 ## Getting Started
 
