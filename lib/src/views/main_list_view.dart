@@ -111,15 +111,12 @@ class _SampleItemListViewState extends State<SampleItemListView> {
   Widget infoFact(Fact fact) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: SizedBox(
-        //height: MediaQuery.of(context).size.height-10,
-        child: Column(
-          children: [
-            photoCat(fact),
-            descriptionCat(fact),
-            operationCat(fact),
-          ],
-        ),
+      child: Column(
+        children: [
+          photoCat(fact),
+          descriptionCat(fact),
+          operationCat(fact),
+        ],
       ),
     );
   }
