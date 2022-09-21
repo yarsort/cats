@@ -204,6 +204,7 @@ class _SampleItemListViewState extends State<SampleItemListView> {
 
                                 // Add to history
                                 listFacts.add(fact);
+                                listFacts.sort((a, b) => b.period.compareTo(a.period));
 
                                 // Update cashed image for updating on the screen
                                 imageCache.clear();
